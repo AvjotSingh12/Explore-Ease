@@ -1,0 +1,21 @@
+<resources>
+    <string name="todo">TODO</string>
+    <string name="explore_your_world_today">Explore your World today</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="not_yet_registered_signup_now">Not yet registered? SignUp Now</string>
+    <string name="hotel_name">name\n</string>
+    <string name="hotel_location">location\n</string>
+    <string name="plan_a_trip">Plan A Trip!</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="log_in">Log In</string>
+    <string name="sign_up">Sign UP</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="text">Our Travellers\' Choice Best of the Best winners are chosen based on your reviews and ratings - so write a review today to help decide next year\'s winners.</string>
+    <string name="write_a_review_make_someone_s_trip">Write a review, make someone\'s trip</string>
+    <string name="what_would_you_like_to_review">what would you like to review?</string>
+</resources>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/backgroundImage"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dash" />
+
+
+        <TextView
+            android:id="@+id/aboveSearchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="@string/explore_your_world_today"
+            android:textSize="30sp"
+            android:layout_marginStart="30dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white" />
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="355dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="30dp"
+
+
+            android:background="@drawable/searchview_bg"
+            android:iconifiedByDefault="false"
+            android:queryHint="Search..." />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <LinearLayout
+                android:id="@+id/imageIconsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+
+                <ImageView
+                    android:id="@+id/icons1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/quicksearch"
+                    android:layout_margin="10dp"
+                    tools:ignore="DuplicateIds" />
+
+                <ImageView
+                    android:id="@+id/icons2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/quicksearch22"
+                    android:layout_margin="10dp"
+                    tools:ignore="DuplicateIds" />
+
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="250dp"
+            android:layout_marginBottom="90dp"
+            android:layout_marginLeft="0dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/popularPlacesHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textStart"
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Popular Places"
+                    android:textColor="@color/blue"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/placeList">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <TextView
+                    android:id="@+id/categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="0dp"
+                    android:text="Expanding your trip around the world"
+                    android:textColor="@color/blue"
+                    android:textSize="25sp"
+                    android:textAlignment="textStart"
+                    android:layout_marginLeft="17dp"
+                    android:textStyle="bold" />
+
+                <include layout="@layout/placehold" />
+
+                <TextView
+                    android:id="@+id/categorie"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="0dp"
+                    android:text="Travel beyond the boundary"
+                    android:textColor="@color/blue"
+                    android:textSize="25sp"
+                    android:textAlignment="textStart"
+                    android:layout_marginLeft="17dp"
+                    android:textStyle="bold" />
+
+                <include layout="@layout/placehold" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_gravity="bottom"
+            android:padding="6dp">
+
+            <ImageView
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/home" />
+
+            <ImageView
+                android:id="@+id/icon2"
+                android:layout_width="41dp"
+                android:layout_height="45dp"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/listing" />
+
+            <ImageView
+
+                android:id="@+id/findloc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/discover" />
+
+
+            <ImageView
+
+                android:id="@+id/profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/profile" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+
+</RelativeLayout>

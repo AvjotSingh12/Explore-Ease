@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Slideshow of Various Pictures -->
+<!--    <androidx.viewpager.widget.ViewPager-->
+<!--        android:id="@+id/slideshowViewPager"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="200dp"-->
+<!--        android:layout_alignParentTop="true" />-->
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:padding="17dp"
+        android:text="Write a Review to Enhance Someone's Trip"
+        android:textColor="@color/blue"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Search Input -->
+    <EditText
+        android:id="@+id/reviewlocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titleText"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:hint="What would you like to review?"
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <!-- Search Button -->
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reviewlocation"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_background"
+        android:layout_marginTop="24dp"
+        android:text="Search"
+        android:textColor="@color/white"
+
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:textSize="16sp" />
+
+</RelativeLayout>

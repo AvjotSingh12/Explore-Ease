@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/group_review" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:title="Profile" />
+        <item
+            android:id="@+id/nav_write_review"
+            android:title="Write a Review" />
+        <item
+            android:id="@+id/nav_view_reviews"
+            android:title="View Your Reviews" />
+    </group>
+    <group android:id="@+id/group_auth" android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_login"
+            android:title="Login" />
+        <item
+            android:id="@+id/nav_signup"
+            android:title="Sign Up" />
+        <item
+            android:id="@+id/nav_logout"
+            android:title="Logout" />
+    </group>
+</menu>

@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="20dp"
+            tools:context=".dashboardleisha">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="0dp">
+
+                    <ImageView
+                        android:id="@+id/sidebar"
+                        android:layout_width="51dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="start"
+                        app:srcCompat="@drawable/ic_baseline_notes_24"
+                        app:tint="#000000" />
+
+                    <!-- Add some space between the sidebar and the AI button -->
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+                    <Button
+                        android:id="@+id/plan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="Plan A Trip "
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/gradient_background"
+                        android:elevation="4dp" />
+
+                    <Button
+                        android:id="@+id/ai_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="AI"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/gradient_background"
+                        android:elevation="4dp" />
+                </LinearLayout>
+
+
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/lato_black"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/plan_a_trip"
+                    android:textColor="@color/black"
+                    android:padding="10dp"
+                    android:textSize="35sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
+                    app:cardBackgroundColor="#E4E4E4"
+                    app:cardCornerRadius="15dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <EditText
+
+                            android:id="@+id/searchforplace"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/lato_bold"
+                            android:hint="Search for any place..."
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <fragment
+                            android:id="@+id/autocomplete_fragment"
+                            android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="end"
+                            android:layout_marginLeft="00dp"
+                            app:cardBackgroundColor="#193b55"
+                            app:cardCornerRadius="15dp">
+
+                            <ImageView
+                                android:id="@+id/searchai"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/ic_baseline_search_24" />
+                        </androidx.cardview.widget.CardView>
+
+
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/airecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/lato_black"
+                    android:padding="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="Most Famous Places"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/placeList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/lato_black"
+                    android:layout_marginLeft="20dp"
+                    android:text="Must Visit Places"
+                    android:textColor="@color/black"
+                    android:textSize="22sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/amritsar_home"
+                                android:layout_width="match_parent"
+                                android:layout_height="220dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                app:cardCornerRadius="20dp"
+                                app:cardElevation="20dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    app:srcCompat="@drawable/amritsar_golden_temple" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:layout_gravity="bottom"
+                                    android:background="#99FFFFFF"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/textView12"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/lato_black"
+                                        android:gravity="center"
+                                        android:text="Amritsar"
+                                        android:textColor="@color/black"
+                                        android:textSize="20sp" />
+                                </LinearLayout>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:layout_gravity="right"
+                                    android:layout_margin="10dp"
+                                    app:cardCornerRadius="48dp">
+
+                                    <ImageView
+                                        android:id="@+id/adapterflipper_fav1"
+                                        android:layout_width="32dp"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="center"
+                                        app:srcCompat="@drawable/ic_baseline_favorite_24" />
+                                </androidx.cardview.widget.CardView>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/agra"
+                                android:layout_width="match_parent"
+                                android:layout_height="220dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="10dp"
+                                app:cardCornerRadius="20dp"
+                                app:cardElevation="20dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    app:srcCompat="@drawable/agra_taj_mahal" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:layout_gravity="bottom"
+                                    android:background="#99FFFFFF"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/textView13"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/lato_black"
+                                        android:gravity="center"
+                                        android:text="Agra"
+                                        android:textColor="@color/black"
+                                        android:textSize="20sp" />
+                                </LinearLayout>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:layout_gravity="right"
+                                    android:layout_margin="10dp"
+                                    app:cardCornerRadius="48dp">
+
+                                    <ImageView
+                                        android:id="@+id/adapterflipper_fav4"
+                                        android:layout_width="32dp"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="center"
+                                        app:srcCompat="@drawable/ic_baseline_favorite_24" />
+                                </androidx.cardview.widget.CardView>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/udaipur"
+                                android:layout_width="match_parent"
+                                android:layout_height="220dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="10dp"
+                                app:cardCornerRadius="20dp"
+                                app:cardElevation="20dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    app:srcCompat="@drawable/udaipur_lake_pichola" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:layout_gravity="bottom"
+                                    android:background="#99FFFFFF"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/textView15"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/lato_black"
+                                        android:gravity="center"
+                                        android:text="Udaipur"
+                                        android:textColor="@color/black"
+                                        android:textSize="20sp" />
+                                </LinearLayout>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:layout_gravity="right"
+                                    android:layout_margin="10dp"
+                                    app:cardCornerRadius="48dp">
+
+                                    <ImageView
+                                        android:id="@+id/adapterflipper_fav7"
+                                        android:layout_width="32dp"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="center"
+                                        app:srcCompat="@drawable/ic_baseline_favorite_24" />
+                                </androidx.cardview.widget.CardView>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/indiagate"
+                                android:layout_width="match_parent"
+                                android:layout_height="220dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                app:cardCornerRadius="20dp"
+                                app:cardElevation="20dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    app:srcCompat="@drawable/new_delhi_india_gate" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:layout_gravity="bottom"
+                                    android:background="#99FFFFFF"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/textView17"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/lato_black"
+                                        android:gravity="center"
+                                        android:text="New Delhi"
+                                        android:textColor="@color/black"
+                                        android:textSize="20sp" />
+                                </LinearLayout>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:layout_gravity="right"
+                                    android:layout_margin="10dp"
+                                    app:cardCornerRadius="48dp">
+
+                                    <ImageView
+                                        android:id="@+id/adapterflipper_fav13"
+                                        android:layout_width="32dp"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="center"
+                                        app:srcCompat="@drawable/ic_baseline_favorite_24" />
+                                </androidx.cardview.widget.CardView>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/varanasi"
+                                android:layout_width="match_parent"
+                                android:layout_height="220dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="10dp"
+                                app:cardCornerRadius="20dp"
+                                app:cardElevation="20dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView10"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    app:srcCompat="@drawable/varanasi_ghat" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:layout_gravity="bottom"
+                                    android:background="#99FFFFFF"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/textView18"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/lato_black"
+                                        android:gravity="center"
+                                        android:text="Varanasi"
+                                        android:textColor="@color/black"
+                                        android:textSize="20sp" />
+                                </LinearLayout>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:layout_gravity="right"
+                                    android:layout_margin="10dp"
+                                    app:cardCornerRadius="48dp">
+
+                                    <ImageView
+                                        android:id="@+id/adapterflipper_fav119"
+                                        android:layout_width="32dp"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="center"
+                                        app:srcCompat="@drawable/ic_baseline_favorite_24" />
+                                </androidx.cardview.widget.CardView>
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/kolkata"
+                                android:layout_width="match_parent"
+                                android:layout_height="220dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="10dp"
+                                app:cardCornerRadius="20dp"
+                                app:cardElevation="20dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView11"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    app:srcCompat="@drawable/kolkata_victoria_memorial_hall" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:layout_gravity="bottom"
+                                    android:background="#99FFFFFF"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/textView6"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:fontFamily="@font/lato_black"
+                                        android:gravity="center"
+                                        android:text="Kolkata"
+                                        android:textColor="@color/black"
+                                        android:textSize="20sp" />
+                                </LinearLayout>
+
+                                <androidx.cardview.widget.CardView
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:layout_gravity="right"
+                                    android:layout_margin="10dp"
+                                    app:cardCornerRadius="48dp">
+
+                                    <ImageView
+                                        android:id="@+id/adapterflipper_fav"
+                                        android:layout_width="32dp"
+                                        android:layout_height="32dp"
+                                        android:layout_gravity="center"
+                                        app:srcCompat="@drawable/ic_baseline_favorite_24" />
+                                </androidx.cardview.widget.CardView>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                     </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </FrameLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu" />
+
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

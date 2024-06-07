@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".takeReview">
+
+    <!-- Image View for Place Photo -->
+    <ImageView
+        android:id="@+id/placephoto"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Scroll View to make the content scrollable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/placephoto"
+        >
+
+        <!-- Linear Layout to hold form elements -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <!-- How would you rate your experience? -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="How would you rate your experience?"
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Rating Bar -->
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="0"
+                android:stepSize="1"
+                android:progressTint="@color/gyellow"
+                android:layout_marginBottom="16dp" />
+
+
+            <!-- When did you go? -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="When did you go?"
+
+                android:textSize="18sp"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Date Picker -->
+            <EditText
+                android:background="@drawable/edit_text_background"
+                android:id="@+id/datePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Select Date"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="none"
+                android:padding="8dp"
+                android:lines="2"
+                android:focusableInTouchMode="false"
+                android:drawableRight="@drawable/ic_calendar"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Who did you go with? -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Who did you go with?"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Button Group for Who you went with -->
+            <EditText
+                android:id="@+id/withwhome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/edit_text_background"
+                android:gravity="start|top"
+                android:hint="eg: individual, family, friend"
+                android:inputType="textMultiLine"
+                android:lines="2"
+                android:padding="8dp"
+                android:scrollbars="vertical" />
+            <!-- Write your review -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Write your review"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Multiline Text Input for review -->
+
+
+            <!-- Title your review -->
+            <EditText
+                android:id="@+id/editText_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/edit_text_background"
+                android:gravity="start|top"
+                android:hint="Write your review"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:padding="8dp"
+                android:scrollbars="vertical" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Title your review"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Text Input for review title -->
+            <EditText
+                android:background="@drawable/edit_text_background"
+                android:id="@+id/editText_review_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Title your review"
+                android:inputType="text"
+                android:padding="8dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Add some photos -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:text="Add some photos"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Button for adding photos -->
+            <Button
+                android:id="@+id/btn_add_photos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="+ Add Photos"
+                android:textColor="@color/white"
+                android:background="@drawable/button_background"
+
+                android:drawableStart="@drawable/ic_add_photo"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:layout_marginBottom="16dp" />
+
+
+            <!-- Button for submitting the review -->
+            <Button
+                android:id="@+id/btn_submit_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit Review"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/white"
+                android:background="@drawable/button_background"
+
+                android:padding="16dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Agreement checkbox -->
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

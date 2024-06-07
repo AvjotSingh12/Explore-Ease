@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/white"
+    tools:context=".cardOnClick2">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/headingTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blue"
+            android:background="@drawable/custom_tab_background"
+            android:padding="20dp"
+            android:text="Destination Name"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/headingTextView"
+            android:padding="10dp"
+            android:background="@drawable/rounded_corners"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:elevation="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/hotelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/place"
+            android:layout_marginTop="16dp"
+            android:text="Hotels"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHotel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hotelText"
+            android:padding="10dp"
+            android:background="@drawable/rounded_corners"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:elevation="4dp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/foodText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rvHotel"
+            android:layout_marginTop="16dp"
+            android:text="Food"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/foodText"
+            android:padding="10dp"
+            android:background="@drawable/rounded_corners"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:elevation="4dp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/activityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rvFood"
+            android:layout_marginTop="16dp"
+            android:text="Activities"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/activityText"
+            android:padding="10dp"
+            android:background="@drawable/rounded_corners"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:elevation="4dp"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/reviewText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rvActivity"
+            android:layout_marginTop="16dp"
+            android:text="What People Think about this place"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/reviewText"
+            android:padding="10dp"
+            android:background="@drawable/rounded_corners"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:elevation="4dp" />
+
+        <Button
+            android:id="@+id/btnAddReview"
+            android:layout_below="@+id/reviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:background="@color/black"
+            android:text="Add Review"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp" />
+
+
+
+
+    </RelativeLayout>
+
+
+</ScrollView>

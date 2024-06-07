@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="nav_home" type="id"/>
+    <item name="nav_profile" type="id"/>
+    <item name="idlogin" type="id"/>
+    <item name="idsignup" type="id"/>
+    <!-- Define other IDs here -->
+</resources>
